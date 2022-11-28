@@ -48,6 +48,8 @@ const Project = ({
                     <a
                         href={`${apps.ios}?itsct=apps_box_badge&itscg=30200`}
                         className="flex justify-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <Image
                             src="/assets/badges/appstore.svg"
@@ -63,6 +65,8 @@ const Project = ({
                     <a
                         href={`${apps.android}&utm_source=website&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1`}
                         className="flex justify-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <Image
                             src="/assets/badges/playstore.png"
