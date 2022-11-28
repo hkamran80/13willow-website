@@ -1,12 +1,13 @@
-import ErrorPage from 'next/error';
-import Head from 'next/head';
-import Layout from '@/components/Layout';
-import PostHeader from '@/components/PostHeader';
-import { getAllPRs, getPRBySlug } from '@/lib/pressrelease';
-import { renderMarkdown } from '@/lib/markdown';
-import { useRouter } from 'next/router';
+import ErrorPage from "next/error";
+import Head from "next/head";
+import Layout from "@/components/Layout";
+import PostHeader from "@/components/PostHeader";
+import { getAllPRs, getPRBySlug } from "@/lib/pressrelease";
+import { renderMarkdown } from "@/lib/markdown";
+import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import type { PressRelease } from "@/types/press";
+import { ArticleJsonLd, BreadcrumbJsonLd, NextSeo } from "next-seo";
 
 type Props = {
     pressRelease: PressRelease;
@@ -30,6 +31,43 @@ const PressReleasePage: NextPage<Props> = ({ pressRelease }) => {
                     <Head>
                         <title>{`${pressRelease.title} - Thirteenth Willow`}</title>
                     </Head>
+
+                    <NextSeo
+                        title={pressRelease.title}
+                        description={pressRelease.subtitle}
+                        canonical={`https://13willow.com/press/${pressRelease.slug}`}
+                    />
+
+                    <ArticleJsonLd
+                        url={`https://13willow.com/press/${pressRelease.slug}`}
+                        title={pressRelease.title}
+                        images={[]}
+                        datePublished={pressRelease.date}
+                        authorName={[
+                            {
+                                name: "Thirteenth Willow",
+                                url: "https://13willow.com",
+                            },
+                        ]}
+                        publisherName="Thirteenth Willow"
+                        description={pressRelease.subtitle}
+                        isAccessibleForFree={true}
+                    />
+
+                    <BreadcrumbJsonLd
+                        itemListElements={[
+                            {
+                                position: 1,
+                                name: "Press Releases",
+                                item: "https://13willow.com/press",
+                            },
+                            {
+                                position: 2,
+                                name: pressRelease.title,
+                                item: `https://13willow.com/press/${pressRelease.slug}`,
+                            },
+                        ]}
+                    />
 
                     <PostHeader
                         title={pressRelease.title}
