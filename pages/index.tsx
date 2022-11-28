@@ -19,7 +19,7 @@ const Home: NextPage = () => {
                     <Footer extra="Google Play and the Google Play logo are trademarks of Google LLC. App Store and the Apple logo are trademarks of Apple Inc." />
                 }
             >
-                <div className="prose prose-invert max-w-none prose-a:text-pink-400">
+                <div className="prose prose-invert max-w-none prose-a:text-pink-700">
                     <h2>Projects</h2>
                     <div className="not-prose flex flex-col space-y-2">
                         <Project

@@ -26,7 +26,7 @@ const TermsOfService: NextPage = () => {
                     </h2>
                 </div>
 
-                <div className="prose prose-invert mt-6 max-w-none prose-a:text-pink-400">
+                <div className="prose prose-invert mt-6 max-w-none prose-a:text-pink-700">
                     <h2 id="table-of-contents">Table of Contents</h2>
                     <ul>
                         <li>

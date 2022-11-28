@@ -1,14 +1,12 @@
-import ErrorPage from "next/error";
-import Head from "next/head";
-import Layout from "@/components/Layout";
-import PostHeader from "@/components/PostHeader";
-import { renderMarkdown } from "@/lib/markdown";
-import { useRouter } from "next/router";
+import ErrorPage from 'next/error';
+import Head from 'next/head';
+import Layout from '@/components/Layout';
+import PostHeader from '@/components/PostHeader';
+import { getAllPRs, getPRBySlug } from '@/lib/pressrelease';
+import { renderMarkdown } from '@/lib/markdown';
+import { useRouter } from 'next/router';
 import type { NextPage } from "next";
 import type { PressRelease } from "@/types/press";
-import { getAllPRs, getPRBySlug } from "@/lib/pressrelease";
-import { Twitter } from "@icons-pack/react-simple-icons";
-import { Globe } from "lucide-react";
 
 type Props = {
     pressRelease: PressRelease;
@@ -40,7 +38,7 @@ const PressReleasePage: NextPage<Props> = ({ pressRelease }) => {
 
                     <div className="mx-auto max-w-3xl">
                         <div
-                            className="prose prose-invert max-w-none prose-a:text-pink-400"
+                            className="prose prose-invert max-w-none prose-a:text-pink-700"
                             dangerouslySetInnerHTML={{
                                 __html: pressRelease.content,
                             }}

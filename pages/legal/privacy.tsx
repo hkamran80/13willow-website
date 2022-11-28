@@ -26,7 +26,7 @@ const PrivacyPolicy: NextPage = () => {
                     </h2>
                 </div>
 
-                <div className="prose prose-invert mt-6 max-w-none prose-a:text-pink-400">
+                <div className="prose prose-invert mt-6 max-w-none prose-a:text-pink-700">
                     <p>
                         This privacy notice for Thirteenth Willow (&quot;
                         <strong>Company</strong>,&quot; &quot;
